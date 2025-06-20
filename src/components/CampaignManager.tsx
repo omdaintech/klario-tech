@@ -7,8 +7,10 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { MessageSquare, Mail, Phone, Send, Calendar, Users, Eye, Plus } from "lucide-react";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { MessageSquare, Mail, Phone, Send, Calendar, Users, Eye, Plus, Sparkles } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import MessageAssistant from "./MessageAssistant";
 
 interface CampaignManagerProps {
   merchantId: string;
@@ -17,6 +19,7 @@ interface CampaignManagerProps {
 const CampaignManager = ({ merchantId }: CampaignManagerProps) => {
   const { toast } = useToast();
   const [selectedTab, setSelectedTab] = useState("overview");
+  const [showAiAssistant, setShowAiAssistant] = useState(false);
   const [newCampaign, setNewCampaign] = useState({
     name: "",
     type: "",
@@ -110,6 +113,11 @@ const CampaignManager = ({ merchantId }: CampaignManagerProps) => {
       schedule: "immediate",
       audience: "all"
     });
+  };
+
+  const handleAiMessageSelect = (message: string) => {
+    setNewCampaign({...newCampaign, message});
+    setShowAiAssistant(false);
   };
 
   const getChannelIcon = (type: string) => {
@@ -324,7 +332,33 @@ const CampaignManager = ({ merchantId }: CampaignManagerProps) => {
                 </div>
 
                 <div>
-                  <Label htmlFor="campaign-message">Message *</Label>
+                  <div className="flex items-center justify-between mb-2">
+                    <Label htmlFor="campaign-message">Message *</Label>
+                    <Dialog open={showAiAssistant} onOpenChange={setShowAiAssistant}>
+                      <DialogTrigger asChild>
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          className="text-purple-600 border-purple-200 hover:bg-purple-50"
+                        >
+                          <Sparkles className="w-4 h-4 mr-2" />
+                          AI Assist
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                        <DialogHeader>
+                          <DialogTitle>AI Message Assistant</DialogTitle>
+                          <DialogDescription>
+                            Generate engaging messages with AI assistance
+                          </DialogDescription>
+                        </DialogHeader>
+                        <MessageAssistant 
+                          onMessageSelect={handleAiMessageSelect}
+                          initialChannel={newCampaign.type}
+                        />
+                      </DialogContent>
+                    </Dialog>
+                  </div>
                   <Textarea
                     id="campaign-message"
                     value={newCampaign.message}
