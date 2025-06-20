@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -330,11 +329,11 @@ const CampaignManager = ({ merchantId }: CampaignManagerProps) => {
                     id="campaign-message"
                     value={newCampaign.message}
                     onChange={(e) => setNewCampaign({...newCampaign, message: e.target.value})}
-                    placeholder="Enter your message (use {{name}} for personalization)"
+                    placeholder="Enter your message (use placeholders for personalization)"
                     className="mt-1 min-h-32"
                   />
                   <p className="text-xs text-gray-500 mt-1">
-                    Tip: Use {{name}}, {{email}}, or {{review_link}} for personalization
+                    Tip: Use placeholders like [NAME], [EMAIL], or [REVIEW_LINK] for personalization
                   </p>
                 </div>
 
