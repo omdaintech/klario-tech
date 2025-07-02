@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -42,12 +41,21 @@ const Index = () => {
                 TapCRM
               </h1>
             </div>
-            <Button 
-              onClick={() => setCurrentView("dashboard")}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            >
-              Open Dashboard
-            </Button>
+            <div className="flex items-center space-x-3">
+              <Button 
+                onClick={() => setCurrentView("dashboard")}
+                variant="outline"
+                className="hover:scale-105 transition-all duration-300"
+              >
+                Demo Dashboard
+              </Button>
+              <Button 
+                onClick={() => window.location.href = '/business/signin'}
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              >
+                Business Login
+              </Button>
+            </div>
           </div>
         </div>
       </header>
@@ -186,13 +194,43 @@ const Index = () => {
           </Card>
         </div>
 
+        {/* Business Account CTA */}
+        <Card className="border-0 shadow-xl bg-gradient-to-r from-green-600 to-blue-600 text-white hover:shadow-2xl transition-all duration-300 transform hover:scale-105 animate-fade-in mb-12" style={{ animationDelay: '0.8s' }}>
+          <CardContent className="p-8">
+            <div className="text-center">
+              <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Business?</h3>
+              <p className="text-green-100 mb-6">
+                Join thousands of businesses already using TapCRM to grow their customer relationships
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button 
+                  size="lg" 
+                  variant="secondary"
+                  onClick={() => window.location.href = '/business/signup'}
+                  className="bg-white text-green-600 hover:bg-gray-100 transition-all duration-300 hover:scale-105 transform active:scale-95 min-w-[180px]"
+                >
+                  Start Free Account
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  onClick={() => window.location.href = '/business/signin'}
+                  className="border-2 border-white text-white hover:bg-white/10 hover:border-white transition-all duration-300 hover:scale-105 transform active:scale-95 min-w-[180px] bg-transparent"
+                >
+                  Business Login
+                </Button>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Quick Actions */}
         <Card className="border-0 shadow-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-2xl transition-all duration-300 transform hover:scale-105 animate-fade-in" style={{ animationDelay: '0.7s' }}>
           <CardContent className="p-8">
             <div className="text-center">
-              <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
+              <h3 className="text-2xl font-bold mb-4">Experience the Demo</h3>
               <p className="text-blue-100 mb-6">
-                Experience the power of NFC-driven customer engagement
+                Test our NFC-driven customer engagement platform
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Button 
