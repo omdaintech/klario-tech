@@ -66,11 +66,11 @@ const Index = () => {
             Transform physical interactions into digital relationships. Tap, collect, engage, and grow your business with GDPR-compliant automation.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg" 
               onClick={() => setCurrentView("form")}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-lg px-8 py-6 transition-all duration-300 hover:scale-105 hover:shadow-lg transform active:scale-95"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-lg px-8 py-6 transition-all duration-300 hover:scale-105 hover:shadow-lg transform active:scale-95 min-w-[200px]"
             >
               Try Customer Form
             </Button>
@@ -78,9 +78,9 @@ const Index = () => {
               size="lg" 
               variant="outline" 
               onClick={() => setCurrentView("dashboard")}
-              className="text-lg px-8 py-6 border-2 hover:bg-gray-50 transition-all duration-300 hover:scale-105 hover:shadow-md transform active:scale-95"
+              className="text-lg px-8 py-6 border-2 border-gray-300 hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 hover:scale-105 hover:shadow-md transform active:scale-95 min-w-[200px] bg-white"
             >
-              View Dashboard
+              Explore Dashboard
             </Button>
           </div>
         </div>
@@ -194,12 +194,12 @@ const Index = () => {
               <p className="text-blue-100 mb-6">
                 Experience the power of NFC-driven customer engagement
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Button 
                   size="lg" 
                   variant="secondary"
                   onClick={() => setCurrentView("form")}
-                  className="bg-white text-blue-600 hover:bg-gray-100 transition-all duration-300 hover:scale-105 transform active:scale-95"
+                  className="bg-white text-blue-600 hover:bg-gray-100 transition-all duration-300 hover:scale-105 transform active:scale-95 min-w-[180px]"
                 >
                   Test Customer Form
                 </Button>
@@ -207,7 +207,7 @@ const Index = () => {
                   size="lg" 
                   variant="outline"
                   onClick={() => setCurrentView("dashboard")}
-                  className="border-white text-white hover:bg-white/10 transition-all duration-300 hover:scale-105 transform active:scale-95"
+                  className="border-2 border-white text-white hover:bg-white/10 hover:border-white transition-all duration-300 hover:scale-105 transform active:scale-95 min-w-[180px] bg-transparent"
                 >
                   Explore Dashboard
                 </Button>
