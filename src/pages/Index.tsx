@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -347,20 +348,25 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
             <p className="text-xl text-gray-600">Choose the plan that fits your business needs</p>
+            <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg inline-block">
+              <p className="text-green-800 font-semibold">🎉 Start with 1 month FREE trial</p>
+              <p className="text-sm text-green-600 mt-1">Cancel anytime with 3 months advance notice</p>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <Card className="border-2 border-gray-200 hover:border-purple-300 transition-all duration-300">
               <CardHeader className="text-center">
                 <CardTitle className="text-2xl">Starter</CardTitle>
-                <div className="text-4xl font-bold text-purple-600 mb-2">$29<span className="text-lg text-gray-500">/month</span></div>
+                <div className="text-4xl font-bold text-purple-600 mb-2">399 SEK<span className="text-lg text-gray-500">/month</span></div>
                 <CardDescription>Perfect for small businesses getting started</CardDescription>
+                <Badge variant="outline" className="mx-auto">Yearly agreement</Badge>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="w-5 h-5 text-green-500" />
-                    <span>Up to 100 customers/month</span>
+                    <span>Up to 100 customers SMS/month</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="w-5 h-5 text-green-500" />
@@ -383,8 +389,9 @@ const Index = () => {
               <CardHeader className="text-center">
                 <Badge className="mb-2 bg-purple-500">Most Popular</Badge>
                 <CardTitle className="text-2xl">Professional</CardTitle>
-                <div className="text-4xl font-bold text-purple-600 mb-2">$79<span className="text-lg text-gray-500">/month</span></div>
+                <div className="text-4xl font-bold text-purple-600 mb-2">799 SEK<span className="text-lg text-gray-500">/month</span></div>
                 <CardDescription>Ideal for growing businesses</CardDescription>
+                <Badge variant="outline" className="mx-auto">Yearly agreement</Badge>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 mb-8">
@@ -449,6 +456,12 @@ const Index = () => {
                 <Button className="w-full" variant="outline">Contact Sales</Button>
               </CardContent>
             </Card>
+          </div>
+          
+          <div className="text-center mt-8">
+            <p className="text-gray-600">
+              <span className="font-semibold">Flexible cancellation:</span> Cancel anytime with 3 months advance notice
+            </p>
           </div>
         </div>
       </section>
