@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -31,14 +30,14 @@ const Index = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section id="home" className="bg-gradient-to-br from-blue-50 via-white to-purple-50 py-20">
+      <section id="home" className="bg-gradient-to-br from-purple-50 via-white to-purple-100 py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 animate-fade-in">
-            <div className="inline-flex items-center space-x-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center space-x-2 bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Shield className="w-4 h-4" />
               <span>GDPR Compliant</span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 bg-clip-text text-transparent">
               NFC-Powered Customer Engagement Platform
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
@@ -49,7 +48,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 onClick={() => setCurrentView("form")}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-lg px-8 py-6"
+                className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-lg px-8 py-6"
               >
                 Try Live Demo
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -58,7 +57,7 @@ const Index = () => {
                 size="lg" 
                 variant="outline" 
                 onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
-                className="text-lg px-8 py-6 border-2"
+                className="text-lg px-8 py-6 border-2 border-purple-600 text-purple-600 hover:bg-purple-50"
               >
                 Book a Demo
                 <Calendar className="w-5 h-5 ml-2" />
@@ -68,10 +67,10 @@ const Index = () => {
 
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
-            <Card className="text-center border-0 shadow-lg bg-gradient-to-br from-blue-50 to-blue-100">
+            <Card className="text-center border-0 shadow-lg bg-gradient-to-br from-purple-50 to-purple-100">
               <CardContent className="p-6">
-                <div className="text-3xl font-bold text-blue-900 mb-2">1,247</div>
-                <div className="text-blue-600 text-sm">Active Customers</div>
+                <div className="text-3xl font-bold text-purple-900 mb-2">1,247</div>
+                <div className="text-purple-600 text-sm">Active Customers</div>
               </CardContent>
             </Card>
             <Card className="text-center border-0 shadow-lg bg-gradient-to-br from-green-50 to-green-100">
@@ -100,7 +99,7 @@ const Index = () => {
       <section id="about" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">About TapCRM</h2>
+            <h2 className="text-4xl font-bold mb-4">About KLARIO</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We're revolutionizing how businesses connect with their customers through innovative NFC technology and AI-powered engagement.
             </p>
@@ -131,10 +130,10 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl p-8">
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Target className="w-8 h-8 text-white" />
                   </div>
                   <h4 className="font-semibold mb-2">Targeted Engagement</h4>
@@ -180,8 +179,8 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
               <CardHeader>
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <Smartphone className="w-6 h-6 text-blue-600" />
+                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                  <Smartphone className="w-6 h-6 text-purple-600" />
                 </div>
                 <CardTitle>NFC Data Collection</CardTitle>
                 <CardDescription>
@@ -311,7 +310,7 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-xl">1</span>
               </div>
               <h3 className="text-xl font-semibold mb-2">Customer Taps NFC</h3>
@@ -351,10 +350,10 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <Card className="border-2 border-gray-200 hover:border-blue-300 transition-all duration-300">
+            <Card className="border-2 border-gray-200 hover:border-purple-300 transition-all duration-300">
               <CardHeader className="text-center">
                 <CardTitle className="text-2xl">Starter</CardTitle>
-                <div className="text-4xl font-bold text-blue-600 mb-2">$29<span className="text-lg text-gray-500">/month</span></div>
+                <div className="text-4xl font-bold text-purple-600 mb-2">$29<span className="text-lg text-gray-500">/month</span></div>
                 <CardDescription>Perfect for small businesses getting started</CardDescription>
               </CardHeader>
               <CardContent>
@@ -380,11 +379,11 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-blue-500 hover:border-blue-600 transition-all duration-300 transform scale-105">
+            <Card className="border-2 border-purple-500 hover:border-purple-600 transition-all duration-300 transform scale-105">
               <CardHeader className="text-center">
-                <Badge className="mb-2 bg-blue-500">Most Popular</Badge>
+                <Badge className="mb-2 bg-purple-500">Most Popular</Badge>
                 <CardTitle className="text-2xl">Professional</CardTitle>
-                <div className="text-4xl font-bold text-blue-600 mb-2">$79<span className="text-lg text-gray-500">/month</span></div>
+                <div className="text-4xl font-bold text-purple-600 mb-2">$79<span className="text-lg text-gray-500">/month</span></div>
                 <CardDescription>Ideal for growing businesses</CardDescription>
               </CardHeader>
               <CardContent>
@@ -414,14 +413,14 @@ const Index = () => {
                     <span>Priority support</span>
                   </li>
                 </ul>
-                <Button className="w-full bg-blue-600 hover:bg-blue-700">Get Started</Button>
+                <Button className="w-full bg-purple-600 hover:bg-purple-700">Get Started</Button>
               </CardContent>
             </Card>
 
             <Card className="border-2 border-gray-200 hover:border-purple-300 transition-all duration-300">
               <CardHeader className="text-center">
                 <CardTitle className="text-2xl">Enterprise</CardTitle>
-                <div className="text-4xl font-bold text-blue-600 mb-2">Custom</div>
+                <div className="text-4xl font-bold text-purple-600 mb-2">Custom</div>
                 <CardDescription>For large organizations with specific needs</CardDescription>
               </CardHeader>
               <CardContent>
@@ -471,10 +470,10 @@ const Index = () => {
                   ))}
                 </div>
                 <p className="text-gray-600 mb-6">
-                  "TapCRM transformed our customer engagement. We saw a 300% increase in customer data collection and a 150% boost in repeat business."
+                  "KLARIO transformed our customer engagement. We saw a 300% increase in customer data collection and a 150% boost in repeat business."
                 </p>
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mr-4">
                     <span className="text-white font-bold">JD</span>
                   </div>
                   <div>
@@ -537,7 +536,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-600">Everything you need to know about TapCRM</p>
+            <p className="text-xl text-gray-600">Everything you need to know about KLARIO</p>
           </div>
 
           <div className="max-w-4xl mx-auto space-y-6">
@@ -554,11 +553,11 @@ const Index = () => {
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-left">Is TapCRM GDPR compliant?</CardTitle>
+                <CardTitle className="text-left">Is KLARIO GDPR compliant?</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Yes, TapCRM is fully GDPR compliant. We include consent checkboxes, data processing transparency, and give customers complete control over their data. All data is encrypted and stored securely.
+                  Yes, KLARIO is fully GDPR compliant. We include consent checkboxes, data processing transparency, and give customers complete control over their data. All data is encrypted and stored securely.
                 </p>
               </CardContent>
             </Card>
@@ -569,7 +568,7 @@ const Index = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  TapCRM supports SMS, email, and WhatsApp messaging. You can create automated campaigns across all channels or focus on specific channels that work best for your business.
+                  KLARIO supports SMS, email, and WhatsApp messaging. You can create automated campaigns across all channels or focus on specific channels that work best for your business.
                 </p>
               </CardContent>
             </Card>
@@ -600,12 +599,12 @@ const Index = () => {
       </section>
 
       {/* Book a Meeting */}
-      <section id="booking" className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section id="booking" className="py-20 bg-gradient-to-r from-purple-600 to-purple-700 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-4">Ready to Transform Your Business?</h2>
-            <p className="text-xl mb-8 text-blue-100">
-              Book a personalized demo and see how TapCRM can revolutionize your customer engagement
+            <p className="text-xl mb-8 text-purple-100">
+              Book a personalized demo and see how KLARIO can revolutionize your customer engagement
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -636,7 +635,7 @@ const Index = () => {
                     <Input placeholder="Business Email" type="email" />
                     <Input placeholder="Company Name" />
                     <Input placeholder="Phone Number" type="tel" />
-                    <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+                    <Button className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800">
                       Book Free Demo
                     </Button>
                   </div>
@@ -660,12 +659,12 @@ const Index = () => {
               <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-blue-600" />
+                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                    <Mail className="w-6 h-6 text-purple-600" />
                   </div>
                   <div>
                     <div className="font-semibold">Email</div>
-                    <div className="text-gray-600">hello@tapcrm.com</div>
+                    <div className="text-gray-600">hello@klario.com</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
@@ -721,10 +720,10 @@ const Index = () => {
                   <Input placeholder="Email Address" type="email" />
                   <Input placeholder="Subject" />
                   <textarea 
-                    className="w-full h-32 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full h-32 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
                     placeholder="Your Message"
                   />
-                  <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600">
+                  <Button className="w-full bg-gradient-to-r from-purple-600 to-purple-700">
                     Send Message
                   </Button>
                 </div>

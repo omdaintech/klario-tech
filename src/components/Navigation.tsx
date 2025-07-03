@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Smartphone, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,29 +19,28 @@ const Navigation = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
-              <Smartphone className="w-4 h-4 text-white" />
-            </div>
-            <h1 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              TapCRM
-            </h1>
+            <img 
+              src="/lovable-uploads/a7eaa1ee-80a5-4e7b-b08f-987d678e9306.png" 
+              alt="KLARIO" 
+              className="h-8 w-auto"
+            />
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-blue-600 transition-colors">
+            <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-purple-600 transition-colors">
               Home
             </button>
-            <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-blue-600 transition-colors">
+            <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-purple-600 transition-colors">
               About
             </button>
-            <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-blue-600 transition-colors">
+            <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-purple-600 transition-colors">
               Services
             </button>
-            <button onClick={() => scrollToSection('pricing')} className="text-gray-700 hover:text-blue-600 transition-colors">
+            <button onClick={() => scrollToSection('pricing')} className="text-gray-700 hover:text-purple-600 transition-colors">
               Pricing
             </button>
-            <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-blue-600 transition-colors">
+            <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-purple-600 transition-colors">
               Contact
             </button>
           </nav>
@@ -49,13 +48,14 @@ const Navigation = () => {
           <div className="hidden md:flex items-center space-x-3">
             <Button 
               onClick={() => scrollToSection('booking')}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+              className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800"
             >
               Book a Meeting
             </Button>
             <Button 
               onClick={() => window.location.href = '/business/signin'}
               variant="outline"
+              className="border-purple-600 text-purple-600 hover:bg-purple-50"
             >
               Sign In
             </Button>
@@ -74,31 +74,32 @@ const Navigation = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t">
             <nav className="flex flex-col space-y-4 pt-4">
-              <button onClick={() => scrollToSection('home')} className="text-left text-gray-700 hover:text-blue-600 transition-colors">
+              <button onClick={() => scrollToSection('home')} className="text-left text-gray-700 hover:text-purple-600 transition-colors">
                 Home
               </button>
-              <button onClick={() => scrollToSection('about')} className="text-left text-gray-700 hover:text-blue-600 transition-colors">
+              <button onClick={() => scrollToSection('about')} className="text-left text-gray-700 hover:text-purple-600 transition-colors">
                 About
               </button>
-              <button onClick={() => scrollToSection('services')} className="text-left text-gray-700 hover:text-blue-600 transition-colors">
+              <button onClick={() => scrollToSection('services')} className="text-left text-gray-700 hover:text-purple-600 transition-colors">
                 Services
               </button>
-              <button onClick={() => scrollToSection('pricing')} className="text-left text-gray-700 hover:text-blue-600 transition-colors">
+              <button onClick={() => scrollToSection('pricing')} className="text-left text-gray-700 hover:text-purple-600 transition-colors">
                 Pricing
               </button>
-              <button onClick={() => scrollToSection('contact')} className="text-left text-gray-700 hover:text-blue-600 transition-colors">
+              <button onClick={() => scrollToSection('contact')} className="text-left text-gray-700 hover:text-purple-600 transition-colors">
                 Contact
               </button>
               <div className="flex flex-col space-y-2 pt-2">
                 <Button 
                   onClick={() => scrollToSection('booking')}
-                  className="bg-gradient-to-r from-blue-600 to-purple-600"
+                  className="bg-gradient-to-r from-purple-600 to-purple-700"
                 >
                   Book a Meeting
                 </Button>
                 <Button 
                   onClick={() => window.location.href = '/business/signin'}
                   variant="outline"
+                  className="border-purple-600 text-purple-600 hover:bg-purple-50"
                 >
                   Sign In
                 </Button>
