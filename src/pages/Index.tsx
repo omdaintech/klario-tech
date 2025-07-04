@@ -38,7 +38,8 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
       <Navigation />
       
-      <header className="py-20 text-center">
+      {/* Home Section */}
+      <section id="home" className="py-20 text-center">
         <h1 className="text-5xl font-bold text-gray-800 mb-4 animate-fade-in">
           Welcome to KLARIO NFC Marketing Platform
         </h1>
@@ -60,13 +61,51 @@ const Index = () => {
             View Dashboard Demo
           </Button>
         </div>
-      </header>
+      </section>
 
-      <section className="py-16 bg-gray-50">
+      {/* About Section */}
+      <section id="about" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              Revolutionary NFC Marketing Features
+              About KLARIO
+            </h2>
+            <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+              KLARIO is Sweden's leading NFC marketing platform, combining cutting-edge Near Field Communication technology with AI-powered automation. We help businesses create meaningful connections with customers through smart, touchless interactions that drive engagement and growth.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <div className="text-center">
+              <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Nfc className="w-8 h-8 text-purple-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">NFC Innovation</h3>
+              <p className="text-gray-600">Leading the way in contactless marketing technology</p>
+            </div>
+            <div className="text-center">
+              <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Zap className="w-8 h-8 text-purple-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">AI-Powered</h3>
+              <p className="text-gray-600">Smart automation that learns and adapts to your business</p>
+            </div>
+            <div className="text-center">
+              <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-purple-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Customer First</h3>
+              <p className="text-gray-600">Focused on creating exceptional customer experiences</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              Revolutionary NFC Marketing Services
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Transform how you connect with customers using our AI-powered NFC technology and smart marketing automation.
@@ -137,7 +176,7 @@ const Index = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-16 bg-white">
+      <section id="pricing" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
@@ -286,7 +325,8 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-16">
+      {/* Why Choose KLARIO Section */}
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-gray-800 mb-8">
             Why Choose KLARIO NFC Marketing?
@@ -328,7 +368,31 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-gray-100">
+      {/* Book a Meeting Section */}
+      <section id="booking" className="py-16 bg-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            Ready to Transform Your Marketing?
+          </h2>
+          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+            Book a free 15-minute consultation with our NFC marketing experts. We'll show you exactly how KLARIO can help grow your business through smart, touchless customer engagement.
+          </p>
+          <div className="max-w-md mx-auto">
+            <Button 
+              className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-full text-lg mb-4"
+              onClick={() => window.open('https://calendly.com/klario-demo', '_blank')}
+            >
+              Book Your Free Demo
+            </Button>
+            <p className="text-sm text-gray-500">
+              No commitment required • 15 minutes • Free consultation
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-16 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
