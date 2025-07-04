@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -32,8 +31,8 @@ const AIChatbot = () => {
   // Initialize with welcome message based on language
   useEffect(() => {
     const welcomeMessage = language === 'sv' 
-      ? "Hej! Jag är Elena, din personliga assistent på KLARIO. Jag är här för att hjälpa dig komma igång med vår SMS-marknadsföringsplattform eller svara på frågor du kan ha. Hur kan jag hjälpa dig idag? 😊"
-      : "Hi there! I'm Elena, your personal assistant at KLARIO. I'm here to help you get started with our SMS marketing platform or answer any questions you might have. How can I help you today? 😊";
+      ? "Hej! Jag är Elena, din personliga assistent på KLARIO. Jag är här för att hjälpa dig komma igång med vår NFC-marknadsföringsplattform eller svara på frågor du kan ha. Hur kan jag hjälpa dig idag? 😊"
+      : "Hi there! I'm Elena, your personal assistant at KLARIO. I'm here to help you get started with our NFC marketing platform or answer any questions you might have. How can I help you today? 😊";
     
     setMessages([{
       id: '1',
@@ -45,25 +44,25 @@ const AIChatbot = () => {
 
   const faqResponses = {
     en: {
-      pricing: "Great question! We offer three plans: Starter at 399 SEK/month (up to 100 SMS/month), Professional at 799 SEK/month (up to 500 SMS/month), and Enterprise with custom pricing. All plans come with a 1-month free trial and yearly agreements. Would you like me to help you choose the right plan?",
+      pricing: "Great question! We offer three plans: Starter at 399 SEK/month (up to 100 customers/month), Professional at 799 SEK/month (up to 500 customers/month), and Enterprise with custom pricing. All plans come with a 1-month free trial and yearly agreements. Would you like me to help you choose the right plan?",
       trial: "Absolutely! We offer a 1-month FREE trial for all our plans. You can cancel anytime with 3 months advance notice. Would you like me to help you get started with your free trial?",
-      nfc: "Our NFC cards are a game-changer! They allow customers to instantly opt-in to your SMS campaigns just by tapping their phone. Starter plan includes 1 NFC card, Professional includes 5 cards, and Enterprise gets custom NFC cards. Pretty cool, right?",
-      sms: "Our SMS marketing platform helps you reach customers directly on their phones with personalized messages. You can send promotions, updates, and automated campaigns. The Professional plan even includes AI message generation to help you write better SMS!",
+      nfc: "Our NFC cards are a game-changer! They allow customers to instantly opt-in to your marketing campaigns just by tapping their phone. Starter plan includes 1 NFC card, Professional includes 5 cards, and Enterprise gets custom NFC cards. Pretty cool, right?",
+      marketing: "Our NFC marketing platform helps you connect with customers through smart touch technology. When customers tap their phone to your NFC card, they instantly connect to your business and can opt-in to your marketing campaigns. The Professional plan even includes AI message generation!",
       support: "I'm here to help! For technical issues, our Starter plan includes email support, Professional gets priority support, and Enterprise customers have dedicated support. What specific question can I help you with?",
       signup: "I'd love to help you get started! First, let me ask - what's your business type and how many customers do you typically want to reach per month? This will help me recommend the perfect plan for you.",
       cancel: "No worries at all! You can cancel your subscription anytime with 3 months advance notice. We believe in transparency and no hidden fees. Is there something specific you're concerned about?",
-      analytics: "Our analytics help you track SMS performance, customer engagement, and campaign success. Basic analytics come with the Starter plan, while Professional and Enterprise plans include advanced analytics with deeper insights.",
+      analytics: "Our analytics help you track NFC interactions, customer engagement, and campaign performance. Basic analytics come with the Starter plan, while Professional and Enterprise plans include advanced analytics with deeper insights.",
       integration: "Yes! Our Enterprise plan includes custom integrations with your existing systems. We can connect with CRMs, e-commerce platforms, and other business tools. What systems are you looking to integrate with?"
     },
     sv: {
-      pricing: "Bra fråga! Vi erbjuder tre planer: Starter för 399 SEK/månad (upp till 100 SMS/månad), Professional för 799 SEK/månad (upp till 500 SMS/månad), och Enterprise med anpassad prissättning. Alla planer kommer med 1 månads gratis provperiod och årsavtal. Vill du att jag hjälper dig välja rätt plan?",
+      pricing: "Bra fråga! Vi erbjuder tre planer: Starter för 399 SEK/månad (upp till 100 kunder/månad), Professional för 799 SEK/månad (upp till 500 kunder/månad), och Enterprise med anpassad prissättning. Alla planer kommer med 1 månads gratis provperiod och årsavtal. Vill du att jag hjälper dig välja rätt plan?",
       trial: "Absolut! Vi erbjuder 1 månads GRATIS provperiod för alla våra planer. Du kan avbryta när som helst med 3 månaders förvarning. Vill du att jag hjälper dig komma igång med din gratis provperiod?",
-      nfc: "Våra NFC-kort är fantastiska! De låter kunder omedelbart anmäla sig till dina SMS-kampanjer bara genom att trycka sin telefon. Starter-planen inkluderar 1 NFC-kort, Professional inkluderar 5 kort, och Enterprise får anpassade NFC-kort. Ganska coolt, eller hur?",
-      sms: "Vår SMS-marknadsföringsplattform hjälper dig nå kunder direkt på deras telefoner med personliga meddelanden. Du kan skicka erbjudanden, uppdateringar och automatiserade kampanjer. Professional-planen inkluderar även AI-meddelandegenerering för att hjälpa dig skriva bättre SMS!",
+      nfc: "Våra NFC-kort är fantastiska! De låter kunder omedelbart anmäla sig till dina marknadsföringskampanjer bara genom att trycka sin telefon. Starter-planen inkluderar 1 NFC-kort, Professional inkluderar 5 kort, och Enterprise får anpassade NFC-kort. Ganska coolt, eller hur?",
+      marketing: "Vår NFC-marknadsföringsplattform hjälper dig ansluta med kunder genom smart touch-teknik. När kunder trycker sin telefon mot ditt NFC-kort ansluter de omedelbart till ditt företag och kan anmäla sig till dina marknadsföringskampanjer. Professional-planen inkluderar även AI-meddelandegenerering!",
       support: "Jag är här för att hjälpa! För tekniska problem inkluderar vår Starter-plan e-postsupport, Professional får prioritetssupport, och Enterprise-kunder har dedikerad support. Vilken specifik fråga kan jag hjälpa dig med?",
       signup: "Jag skulle gärna hjälpa dig komma igång! Först, låt mig fråga - vilken typ av företag har du och hur många kunder vill du vanligtvis nå per månad? Detta hjälper mig rekommendera den perfekta planen för dig.",
       cancel: "Inga problem alls! Du kan avbryta din prenumeration när som helst med 3 månaders förvarning. Vi tror på transparens och inga dolda avgifter. Finns det något specifikt du är orolig för?",
-      analytics: "Vår analys hjälper dig spåra SMS-prestanda, kundengagemang och kampanjframgång. Grundläggande analys kommer med Starter-planen, medan Professional och Enterprise-planer inkluderar avancerad analys med djupare insikter.",
+      analytics: "Vår analys hjälper dig spåra NFC-interaktioner, kundengagemang och kampanjprestanda. Grundläggande analys kommer med Starter-planen, medan Professional och Enterprise-planer inkluderar avancerad analys med djupare insikter.",
       integration: "Ja! Vår Enterprise-plan inkluderar anpassade integrationer med dina befintliga system. Vi kan ansluta med CRM:er, e-handelsplattformar och andra affärsverktyg. Vilka system vill du integrera med?"
     }
   };
@@ -96,8 +95,8 @@ const AIChatbot = () => {
     if (message.includes('nfc') || message.includes('card') || message.includes('kort')) {
       return responses.nfc;
     }
-    if (message.includes('sms') || message.includes('text') || message.includes('message') || message.includes('meddelande')) {
-      return responses.sms;
+    if (message.includes('marketing') || message.includes('campaign') || message.includes('marknadsföring') || message.includes('kampanj')) {
+      return responses.marketing;
     }
     if (message.includes('support') || message.includes('help') || message.includes('hjälp') || message.includes('stöd')) {
       return responses.support;
@@ -116,13 +115,13 @@ const AIChatbot = () => {
     }
     if (message.includes('hello') || message.includes('hi') || message.includes('hey') || message.includes('hej') || message.includes('hallå')) {
       return language === 'sv' 
-        ? "Hej! Trevligt att träffa dig! Jag är Elena från KLARIO. Jag är här för att hjälpa dig upptäcka hur vår SMS-marknadsföringsplattform kan få ditt företag att växa. Vad skulle du vilja veta?"
-        : "Hello! Nice to meet you! I'm Elena from KLARIO. I'm here to help you discover how our SMS marketing platform can grow your business. What would you like to know?";
+        ? "Hej! Trevligt att träffa dig! Jag är Elena från KLARIO. Jag är här för att hjälpa dig upptäcka hur vår NFC-marknadsföringsplattform kan få ditt företag att växa. Vad skulle du vilja veta?"
+        : "Hello! Nice to meet you! I'm Elena from KLARIO. I'm here to help you discover how our NFC marketing platform can grow your business. What would you like to know?";
     }
     
     return language === 'sv'
-      ? "Det är en bra fråga! Jag hjälper gärna dig med det. För mer specifik information kan jag koppla dig till vårt team, eller ställ gärna frågor om vår prissättning, funktioner, gratis provperiod eller hur du kommer igång. Vad intresserar dig mest?"
-      : "That's a great question! I'd be happy to help you with that. For more specific information, I can connect you with our team, or feel free to ask me about our pricing, features, free trial, or how to get started. What interests you most?";
+      ? "Det är en bra fråga! Jag hjälper gärna dig med det. För mer specifik information kan jag koppla dig till vårt team, eller ställ gärna frågor om vår prissättning, NFC-funktioner, gratis provperiod eller hur du kommer igång. Vad intresserar dig mest?"
+      : "That's a great question! I'd be happy to help you with that. For more specific information, I can connect you with our team, or feel free to ask me about our pricing, NFC features, free trial, or how to get started. What interests you most?";
   };
 
   const handleSendMessage = async () => {

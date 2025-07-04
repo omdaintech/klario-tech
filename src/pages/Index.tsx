@@ -1,18 +1,23 @@
+
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { CheckCircle, Star, Users, MessageSquare, TrendingUp, Shield, Zap, Globe, Phone, Mail, MapPin } from "lucide-react";
+import { CheckCircle, Star, Users, MessageSquare, TrendingUp, Shield, Zap, Globe, Phone, Mail, MapPin, Smartphone, Nfc, QrCode } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AIChatbot from "@/components/AIChatbot";
+import CustomerForm from "@/components/CustomerForm";
+import Dashboard from "@/components/Dashboard";
 
 const Index = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
+  const [currentView, setCurrentView] = useState<'home' | 'customer-form' | 'dashboard'>('home');
+  const [merchantId, setMerchantId] = useState("demo-merchant-123");
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -21,82 +26,260 @@ const Index = () => {
     }
   };
 
+  if (currentView === 'customer-form') {
+    return <CustomerForm merchantId={merchantId} onBack={() => setCurrentView('home')} />;
+  }
+
+  if (currentView === 'dashboard') {
+    return <Dashboard merchantId={merchantId} onBack={() => setCurrentView('home')} />;
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
       <Navigation />
       
       <header className="py-20 text-center">
         <h1 className="text-5xl font-bold text-gray-800 mb-4 animate-fade-in">
-          Welcome to KLARIO SMS Marketing Platform
+          Welcome to KLARIO NFC Marketing Platform
         </h1>
         <p className="text-lg text-gray-600 mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          Reach your customers directly with personalized SMS campaigns.
+          AI-powered NFC marketing that transforms customer engagement with smart touch technology.
         </p>
-        <Button className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full focus-ring animate-bounce-in">
-          Get Started Now
-        </Button>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <Button 
+            className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full focus-ring animate-bounce-in"
+            onClick={() => setCurrentView('customer-form')}
+          >
+            Try Customer Form
+          </Button>
+          <Button 
+            variant="outline"
+            className="border-purple-600 text-purple-600 hover:bg-purple-50 font-bold py-3 px-8 rounded-full"
+            onClick={() => setCurrentView('dashboard')}
+          >
+            View Dashboard Demo
+          </Button>
+        </div>
       </header>
 
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              Revolutionary NFC Marketing Features
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Transform how you connect with customers using our AI-powered NFC technology and smart marketing automation.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="shadow-xl animate-slide-in-right">
               <CardHeader>
-                <CardTitle className="flex items-center"><CheckCircle className="mr-2 text-green-500" /> Easy Setup</CardTitle>
-                <CardDescription>Get started in minutes.</CardDescription>
+                <CardTitle className="flex items-center"><Nfc className="mr-2 text-blue-500" /> Smart NFC Cards</CardTitle>
+                <CardDescription>Tap to connect instantly.</CardDescription>
               </CardHeader>
               <CardContent>
-                Our platform is designed for simplicity. No coding required!
+                Custom NFC cards that instantly connect customers to your business with a simple tap.
               </CardContent>
             </Card>
 
             <Card className="shadow-xl animate-slide-in-right" style={{ animationDelay: '0.2s' }}>
               <CardHeader>
-                <CardTitle className="flex items-center"><Star className="mr-2 text-yellow-500" /> Personalized Campaigns</CardTitle>
-                <CardDescription>Tailor messages to your audience.</CardDescription>
+                <CardTitle className="flex items-center"><Star className="mr-2 text-yellow-500" /> AI-Powered Campaigns</CardTitle>
+                <CardDescription>Smart messaging automation.</CardDescription>
               </CardHeader>
               <CardContent>
-                Send targeted offers and updates that resonate with your customers.
+                AI generates personalized messages and campaigns that resonate with your customers.
               </CardContent>
             </Card>
 
             <Card className="shadow-xl animate-slide-in-right" style={{ animationDelay: '0.4s' }}>
               <CardHeader>
-                <CardTitle className="flex items-center"><Users className="mr-2 text-blue-500" /> Customer Segmentation</CardTitle>
-                <CardDescription>Reach the right people.</CardDescription>
+                <CardTitle className="flex items-center"><Users className="mr-2 text-blue-500" /> Customer Insights</CardTitle>
+                <CardDescription>Know your audience better.</CardDescription>
               </CardHeader>
               <CardContent>
-                Segment your audience based on demographics, behavior, and more.
+                Advanced analytics and customer segmentation powered by AI technology.
               </CardContent>
             </Card>
 
             <Card className="shadow-xl animate-slide-in-right" style={{ animationDelay: '0.6s' }}>
               <CardHeader>
-                <CardTitle className="flex items-center"><MessageSquare className="mr-2 text-purple-500" /> Two-Way Messaging</CardTitle>
-                <CardDescription>Engage in real-time conversations.</CardDescription>
+                <CardTitle className="flex items-center"><MessageSquare className="mr-2 text-purple-500" /> Multi-Channel Reach</CardTitle>
+                <CardDescription>Connect everywhere customers are.</CardDescription>
               </CardHeader>
               <CardContent>
-                Answer questions, provide support, and build relationships with your customers.
+                Reach customers via SMS, email, WhatsApp, and social media from one platform.
               </CardContent>
             </Card>
 
             <Card className="shadow-xl animate-slide-in-right" style={{ animationDelay: '0.8s' }}>
               <CardHeader>
-                <CardTitle className="flex items-center"><TrendingUp className="mr-2 text-orange-500" /> Analytics & Reporting</CardTitle>
-                <CardDescription>Track your success.</CardDescription>
+                <CardTitle className="flex items-center"><TrendingUp className="mr-2 text-orange-500" /> Real-time Analytics</CardTitle>
+                <CardDescription>Track your success instantly.</CardDescription>
               </CardHeader>
               <CardContent>
-                Monitor campaign performance, track conversions, and optimize your strategy.
+                Monitor NFC interactions, campaign performance, and customer engagement in real-time.
               </CardContent>
             </Card>
 
             <Card className="shadow-xl animate-slide-in-right" style={{ animationDelay: '1s' }}>
               <CardHeader>
-                <CardTitle className="flex items-center"><Shield className="mr-2 text-teal-500" /> Secure & Reliable</CardTitle>
-                <CardDescription>Your data is safe with us.</CardDescription>
+                <CardTitle className="flex items-center"><Shield className="mr-2 text-teal-500" /> GDPR Compliant</CardTitle>
+                <CardDescription>Privacy-first approach.</CardDescription>
               </CardHeader>
               <CardContent>
-                We use industry-leading security measures to protect your information.
+                Full GDPR compliance with transparent data collection and customer consent management.
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              Simple, Transparent Pricing
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Choose the perfect plan for your business. All plans include 1 month free trial with yearly agreement. Cancel anytime with 3 months advance notice.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Starter Plan */}
+            <Card className="shadow-xl hover:shadow-2xl transition-shadow duration-300 relative">
+              <div className="absolute top-4 right-4">
+                <Badge className="bg-green-100 text-green-800">1 Month Free</Badge>
+              </div>
+              <CardHeader className="text-center pb-4">
+                <CardTitle className="text-2xl font-bold">Starter</CardTitle>
+                <div className="mt-4">
+                  <span className="text-4xl font-bold text-purple-600">399</span>
+                  <span className="text-gray-600"> SEK/month</span>
+                </div>
+                <p className="text-sm text-gray-500 mt-2">Yearly agreement required</p>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                    Up to 100 customers/month
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                    1 NFC card included
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                    Basic analytics
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                    Email support
+                  </li>
+                </ul>
+                <Button className="w-full bg-purple-600 hover:bg-purple-700">
+                  Start Free Trial
+                </Button>
+                <p className="text-xs text-gray-500 text-center mt-2">
+                  Cancel anytime, 3 months in advance
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Professional Plan */}
+            <Card className="shadow-xl hover:shadow-2xl transition-shadow duration-300 relative border-purple-200">
+              <div className="absolute top-4 right-4">
+                <Badge className="bg-purple-100 text-purple-800">Most Popular</Badge>
+              </div>
+              <CardHeader className="text-center pb-4">
+                <CardTitle className="text-2xl font-bold">Professional</CardTitle>
+                <div className="mt-4">
+                  <span className="text-4xl font-bold text-purple-600">799</span>
+                  <span className="text-gray-600"> SEK/month</span>
+                </div>
+                <p className="text-sm text-gray-500 mt-2">Yearly agreement required</p>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                    Up to 500 customers/month
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                    5 NFC cards included
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                    AI message generation
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                    Multi-channel campaigns
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                    Advanced analytics
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                    Priority support
+                  </li>
+                </ul>
+                <Button className="w-full bg-purple-600 hover:bg-purple-700">
+                  Start Free Trial
+                </Button>
+                <p className="text-xs text-gray-500 text-center mt-2">
+                  Cancel anytime, 3 months in advance
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Enterprise Plan */}
+            <Card className="shadow-xl hover:shadow-2xl transition-shadow duration-300 relative">
+              <div className="absolute top-4 right-4">
+                <Badge className="bg-blue-100 text-blue-800">Custom</Badge>
+              </div>
+              <CardHeader className="text-center pb-4">
+                <CardTitle className="text-2xl font-bold">Enterprise</CardTitle>
+                <div className="mt-4">
+                  <span className="text-4xl font-bold text-purple-600">Custom</span>
+                </div>
+                <p className="text-sm text-gray-500 mt-2">For large organizations</p>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                    Unlimited customers
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                    Custom NFC cards
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                    White-label solution
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                    Custom integrations
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                    Dedicated support
+                  </li>
+                </ul>
+                <Button className="w-full bg-purple-600 hover:bg-purple-700">
+                  Contact Sales
+                </Button>
+                <p className="text-xs text-gray-500 text-center mt-2">
+                  Custom terms available
+                </p>
               </CardContent>
             </Card>
           </div>
@@ -106,39 +289,39 @@ const Index = () => {
       <section className="py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-gray-800 mb-8">
-            Why Choose KLARIO?
+            Why Choose KLARIO NFC Marketing?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-xl font-semibold text-gray-700 mb-4 flex items-center justify-center">
-                <Zap className="mr-2 text-purple-500" /> Instant Delivery
+                <Nfc className="mr-2 text-purple-500" /> Instant NFC Connection
               </h3>
               <p className="text-gray-600">
-                Reach your customers in seconds with our reliable SMS gateway.
+                Customers simply tap their phone to your NFC card to instantly connect and opt-in.
               </p>
             </div>
             <div>
               <h3 className="text-xl font-semibold text-gray-700 mb-4 flex items-center justify-center">
-                <Globe className="mr-2 text-blue-500" /> Global Reach
+                <Zap className="mr-2 text-blue-500" /> AI-Powered Automation
               </h3>
               <p className="text-gray-600">
-                Send SMS campaigns to customers around the world.
+                Our AI creates personalized campaigns and optimizes customer engagement automatically.
               </p>
             </div>
             <div>
               <h3 className="text-xl font-semibold text-gray-700 mb-4 flex items-center justify-center">
-                <Phone className="mr-2 text-green-500" /> Mobile-Friendly
+                <Smartphone className="mr-2 text-green-500" /> Mobile-First Design
               </h3>
               <p className="text-gray-600">
-                Optimize your messages for mobile devices.
+                Seamless experience optimized for mobile devices and modern customer behavior.
               </p>
             </div>
             <div>
               <h3 className="text-xl font-semibold text-gray-700 mb-4 flex items-center justify-center">
-                <Mail className="mr-2 text-orange-500" /> Email Integration
+                <Globe className="mr-2 text-orange-500" /> Multi-Channel Integration
               </h3>
               <p className="text-gray-600">
-                Integrate SMS with your existing email marketing campaigns.
+                Connect NFC interactions with email, SMS, WhatsApp, and social media campaigns.
               </p>
             </div>
           </div>
@@ -153,7 +336,7 @@ const Index = () => {
                 Contact Us
               </h2>
               <p className="text-gray-600 mb-4">
-                Have questions? Reach out to our team.
+                Ready to revolutionize your customer marketing with NFC technology?
               </p>
               <form onSubmit={(e) => handleSubmit(e)}>
                 <div className="mb-4">
@@ -167,7 +350,7 @@ const Index = () => {
                 </div>
                 <div className="mb-4">
                   <Textarea
-                    placeholder="Your Message"
+                    placeholder="Tell us about your business and NFC marketing needs"
                     className="w-full px-4 py-2 border rounded-md focus:ring-purple-500 focus:border-purple-500"
                     rows={4}
                     value={message}
@@ -175,12 +358,12 @@ const Index = () => {
                   />
                 </div>
                 <Button type="submit" className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-md focus-ring">
-                  Send Message
+                  Get Started with NFC
                 </Button>
               </form>
               {isSubscribed && (
                 <Badge className="mt-4 bg-green-500 text-white border-0">
-                  Thank you for subscribing!
+                  Thank you! We'll be in touch about your NFC marketing solution.
                 </Badge>
               )}
             </div>
@@ -189,19 +372,19 @@ const Index = () => {
                 Visit Us
               </h2>
               <p className="text-gray-600 mb-4">
-                Our office is located in the heart of the city.
+                Our NFC technology experts are ready to help you transform your marketing.
               </p>
               <div className="flex items-center mb-2">
                 <MapPin className="mr-2 text-purple-500" />
-                <span className="text-gray-700">123 Main Street, Cityville</span>
+                <span className="text-gray-700">123 Innovation Street, Stockholm</span>
               </div>
               <div className="flex items-center mb-2">
                 <Phone className="mr-2 text-purple-500" />
-                <span className="text-gray-700">(123) 456-7890</span>
+                <span className="text-gray-700">+46 8 123 456 78</span>
               </div>
               <div className="flex items-center">
                 <Mail className="mr-2 text-purple-500" />
-                <span className="text-gray-700">info@klario.com</span>
+                <span className="text-gray-700">hello@klario.se</span>
               </div>
             </div>
           </div>
