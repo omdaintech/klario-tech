@@ -1,7 +1,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Message, UserContext, LeadData, BookingData } from './types';
-import { detectLanguage, getWelcomeMessage, generateResponse } from './utils';
+import { detectLanguage, getWelcomeMessage, generateResponse, resetConversationState } from './utils';
 import { useToast } from "@/hooks/use-toast";
 
 export const useChatbot = () => {
@@ -45,6 +45,9 @@ export const useChatbot = () => {
       sender: 'bot',
       timestamp: new Date()
     }]);
+
+    // Reset conversation state when chatbot initializes
+    resetConversationState();
   }, []);
 
   const handleSendMessage = async () => {
@@ -78,7 +81,18 @@ export const useChatbot = () => {
     // Realistic typing delay
     const delay = 800 + Math.random() * 800;
     setTimeout(() => {
-      const response = generateResponse(messageToProcess, { ...userContext, language: detectedLang });
+      // Get conversation history for context
+      const conversationHistory = [...messages, userMessage].map(msg => ({
+        text: msg.text,
+        sender: msg.sender
+      }));
+
+      const response = generateResponse(
+        messageToProcess, 
+        { ...userContext, language: detectedLang },
+        conversationHistory
+      );
+      
       const botResponse: Message = {
         id: (Date.now() + 1).toString(),
         text: response.text,
