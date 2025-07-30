@@ -11,6 +11,8 @@ import Footer from "@/components/Footer";
 import AIChatbot from "@/components/AIChatbot";
 import CustomerForm from "@/components/CustomerForm";
 import Dashboard from "@/components/Dashboard";
+import { useLocalization } from "@/hooks/useLocalization";
+import { t } from "@/localization/translations";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -18,6 +20,7 @@ const Index = () => {
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [currentView, setCurrentView] = useState<'home' | 'customer-form' | 'dashboard'>('home');
   const [merchantId, setMerchantId] = useState("demo-merchant-123");
+  const { language } = useLocalization();
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -41,24 +44,24 @@ const Index = () => {
       {/* Home Section */}
       <section id="home" className="py-20 text-center">
         <h1 className="text-5xl font-bold text-gray-800 mb-4 animate-fade-in">
-          Welcome to KLARIO NFC Marketing Platform
+          {t(language, 'home.title')}
         </h1>
         <p className="text-lg text-gray-600 mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          AI-powered NFC marketing that transforms customer engagement with smart touch technology.
+          {t(language, 'home.subtitle')}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button 
             className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full focus-ring animate-bounce-in"
             onClick={() => setCurrentView('customer-form')}
           >
-            Try Customer Form
+            {t(language, 'home.tryCustomerForm')}
           </Button>
           <Button 
             variant="outline"
             className="border-purple-600 text-purple-600 hover:bg-purple-50 font-bold py-3 px-8 rounded-full"
             onClick={() => setCurrentView('dashboard')}
           >
-            View Dashboard Demo
+            {t(language, 'home.viewDashboard')}
           </Button>
         </div>
       </section>
@@ -68,10 +71,10 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              About KLARIO
+              {t(language, 'about.title')}
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-              KLARIO is Sweden's leading NFC marketing platform, combining cutting-edge Near Field Communication technology with AI-powered automation. We help businesses create meaningful connections with customers through smart, touchless interactions that drive engagement and growth.
+              {t(language, 'about.description')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
@@ -79,22 +82,22 @@ const Index = () => {
               <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Nfc className="w-8 h-8 text-purple-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">NFC Innovation</h3>
-              <p className="text-gray-600">Leading the way in contactless marketing technology</p>
+              <h3 className="text-xl font-semibold mb-2">{t(language, 'about.nfcInnovation')}</h3>
+              <p className="text-gray-600">{t(language, 'about.nfcDescription')}</p>
             </div>
             <div className="text-center">
               <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Zap className="w-8 h-8 text-purple-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">AI-Powered</h3>
-              <p className="text-gray-600">Smart automation that learns and adapts to your business</p>
+              <h3 className="text-xl font-semibold mb-2">{t(language, 'about.aiPowered')}</h3>
+              <p className="text-gray-600">{t(language, 'about.aiDescription')}</p>
             </div>
             <div className="text-center">
               <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-purple-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Customer First</h3>
-              <p className="text-gray-600">Focused on creating exceptional customer experiences</p>
+              <h3 className="text-xl font-semibold mb-2">{t(language, 'about.customerFirst')}</h3>
+              <p className="text-gray-600">{t(language, 'about.customerDescription')}</p>
             </div>
           </div>
         </div>
@@ -105,70 +108,70 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              Revolutionary NFC Marketing Services
+              {t(language, 'services.title')}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Transform how you connect with customers using our AI-powered NFC technology and smart marketing automation.
+              {t(language, 'services.subtitle')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="shadow-xl animate-slide-in-right">
               <CardHeader>
-                <CardTitle className="flex items-center"><Nfc className="mr-2 text-blue-500" /> Smart NFC Cards</CardTitle>
-                <CardDescription>Tap to connect instantly.</CardDescription>
+                <CardTitle className="flex items-center"><Nfc className="mr-2 text-blue-500" /> {t(language, 'services.smartNfc')}</CardTitle>
+                <CardDescription>{t(language, 'services.smartNfcDesc')}</CardDescription>
               </CardHeader>
               <CardContent>
-                Custom NFC cards that instantly connect customers to your business with a simple tap.
+                {t(language, 'services.smartNfcContent')}
               </CardContent>
             </Card>
 
             <Card className="shadow-xl animate-slide-in-right" style={{ animationDelay: '0.2s' }}>
               <CardHeader>
-                <CardTitle className="flex items-center"><Star className="mr-2 text-yellow-500" /> AI-Powered Campaigns</CardTitle>
-                <CardDescription>Smart messaging automation.</CardDescription>
+                <CardTitle className="flex items-center"><Star className="mr-2 text-yellow-500" /> {t(language, 'services.aiCampaigns')}</CardTitle>
+                <CardDescription>{t(language, 'services.aiCampaignsDesc')}</CardDescription>
               </CardHeader>
               <CardContent>
-                AI generates personalized messages and campaigns that resonate with your customers.
+                {t(language, 'services.aiCampaignsContent')}
               </CardContent>
             </Card>
 
             <Card className="shadow-xl animate-slide-in-right" style={{ animationDelay: '0.4s' }}>
               <CardHeader>
-                <CardTitle className="flex items-center"><Users className="mr-2 text-blue-500" /> Customer Insights</CardTitle>
-                <CardDescription>Know your audience better.</CardDescription>
+                <CardTitle className="flex items-center"><Users className="mr-2 text-blue-500" /> {t(language, 'services.customerInsights')}</CardTitle>
+                <CardDescription>{t(language, 'services.customerInsightsDesc')}</CardDescription>
               </CardHeader>
               <CardContent>
-                Advanced analytics and customer segmentation powered by AI technology.
+                {t(language, 'services.customerInsightsContent')}
               </CardContent>
             </Card>
 
             <Card className="shadow-xl animate-slide-in-right" style={{ animationDelay: '0.6s' }}>
               <CardHeader>
-                <CardTitle className="flex items-center"><MessageSquare className="mr-2 text-purple-500" /> Multi-Channel Reach</CardTitle>
-                <CardDescription>Connect everywhere customers are.</CardDescription>
+                <CardTitle className="flex items-center"><MessageSquare className="mr-2 text-purple-500" /> {t(language, 'services.multiChannel')}</CardTitle>
+                <CardDescription>{t(language, 'services.multiChannelDesc')}</CardDescription>
               </CardHeader>
               <CardContent>
-                Reach customers via SMS, email, WhatsApp, and social media from one platform.
+                {t(language, 'services.multiChannelContent')}
               </CardContent>
             </Card>
 
             <Card className="shadow-xl animate-slide-in-right" style={{ animationDelay: '0.8s' }}>
               <CardHeader>
-                <CardTitle className="flex items-center"><TrendingUp className="mr-2 text-orange-500" /> Real-time Analytics</CardTitle>
-                <CardDescription>Track your success instantly.</CardDescription>
+                <CardTitle className="flex items-center"><TrendingUp className="mr-2 text-orange-500" /> {t(language, 'services.realTimeAnalytics')}</CardTitle>
+                <CardDescription>{t(language, 'services.realTimeAnalyticsDesc')}</CardDescription>
               </CardHeader>
               <CardContent>
-                Monitor NFC interactions, campaign performance, and customer engagement in real-time.
+                {t(language, 'services.realTimeAnalyticsContent')}
               </CardContent>
             </Card>
 
             <Card className="shadow-xl animate-slide-in-right" style={{ animationDelay: '1s' }}>
               <CardHeader>
-                <CardTitle className="flex items-center"><Shield className="mr-2 text-teal-500" /> GDPR Compliant</CardTitle>
-                <CardDescription>Privacy-first approach.</CardDescription>
+                <CardTitle className="flex items-center"><Shield className="mr-2 text-teal-500" /> {t(language, 'services.gdprCompliant')}</CardTitle>
+                <CardDescription>{t(language, 'services.gdprCompliantDesc')}</CardDescription>
               </CardHeader>
               <CardContent>
-                Full GDPR compliance with transparent data collection and customer consent management.
+                {t(language, 'services.gdprCompliantContent')}
               </CardContent>
             </Card>
           </div>

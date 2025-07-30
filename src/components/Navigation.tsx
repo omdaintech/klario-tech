@@ -2,9 +2,13 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { useLocalization } from "@/hooks/useLocalization";
+import { t } from "@/localization/translations";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language } = useLocalization();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -29,35 +33,36 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-purple-600 transition-colors">
-              Home
+              {t(language, 'nav.home')}
             </button>
             <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-purple-600 transition-colors">
-              About
+              {t(language, 'nav.about')}
             </button>
             <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-purple-600 transition-colors">
-              Services
+              {t(language, 'nav.services')}
             </button>
             <button onClick={() => scrollToSection('pricing')} className="text-gray-700 hover:text-purple-600 transition-colors">
-              Pricing
+              {t(language, 'nav.pricing')}
             </button>
             <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-purple-600 transition-colors">
-              Contact
+              {t(language, 'nav.contact')}
             </button>
           </nav>
 
           <div className="hidden md:flex items-center space-x-3">
+            <LanguageSwitcher />
             <Button 
               onClick={() => scrollToSection('booking')}
               className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800"
             >
-              Book a Meeting
+              {t(language, 'nav.bookMeeting')}
             </Button>
             <Button 
               onClick={() => window.location.href = '/business/signin'}
               variant="outline"
               className="border-purple-600 text-purple-600 hover:bg-purple-50"
             >
-              Sign In
+              {t(language, 'nav.signIn')}
             </Button>
           </div>
 
@@ -75,33 +80,34 @@ const Navigation = () => {
           <div className="md:hidden mt-4 pb-4 border-t">
             <nav className="flex flex-col space-y-4 pt-4">
               <button onClick={() => scrollToSection('home')} className="text-left text-gray-700 hover:text-purple-600 transition-colors">
-                Home
+                {t(language, 'nav.home')}
               </button>
               <button onClick={() => scrollToSection('about')} className="text-left text-gray-700 hover:text-purple-600 transition-colors">
-                About
+                {t(language, 'nav.about')}
               </button>
               <button onClick={() => scrollToSection('services')} className="text-left text-gray-700 hover:text-purple-600 transition-colors">
-                Services
+                {t(language, 'nav.services')}
               </button>
               <button onClick={() => scrollToSection('pricing')} className="text-left text-gray-700 hover:text-purple-600 transition-colors">
-                Pricing
+                {t(language, 'nav.pricing')}
               </button>
               <button onClick={() => scrollToSection('contact')} className="text-left text-gray-700 hover:text-purple-600 transition-colors">
-                Contact
+                {t(language, 'nav.contact')}
               </button>
               <div className="flex flex-col space-y-2 pt-2">
+                <LanguageSwitcher />
                 <Button 
                   onClick={() => scrollToSection('booking')}
                   className="bg-gradient-to-r from-purple-600 to-purple-700"
                 >
-                  Book a Meeting
+                  {t(language, 'nav.bookMeeting')}
                 </Button>
                 <Button 
                   onClick={() => window.location.href = '/business/signin'}
                   variant="outline"
                   className="border-purple-600 text-purple-600 hover:bg-purple-50"
                 >
-                  Sign In
+                  {t(language, 'nav.signIn')}
                 </Button>
               </div>
             </nav>

@@ -2,8 +2,12 @@
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useLocalization } from "@/hooks/useLocalization";
+import { t } from "@/localization/translations";
 
 const Footer = () => {
+  const { language } = useLocalization();
+  
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-12">
@@ -18,7 +22,7 @@ const Footer = () => {
               />
             </div>
             <p className="text-gray-400">
-              Transform physical interactions into digital relationships with NFC-powered customer engagement.
+              {t(language, 'footer.description')}
             </p>
             <div className="flex space-x-4">
               <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
@@ -35,26 +39,26 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Quick Links</h4>
+            <h4 className="text-lg font-semibold">{t(language, 'footer.quickLinks')}</h4>
             <div className="space-y-2">
               <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white p-0 h-auto justify-start">
-                About Us
+                {t(language, 'footer.aboutUs')}
               </Button>
               <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white p-0 h-auto justify-start">
-                Services
+                {t(language, 'nav.services')}
               </Button>
               <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white p-0 h-auto justify-start">
-                Pricing
+                {t(language, 'nav.pricing')}
               </Button>
               <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white p-0 h-auto justify-start">
-                Contact
+                {t(language, 'nav.contact')}
               </Button>
             </div>
           </div>
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Contact Info</h4>
+            <h4 className="text-lg font-semibold">{t(language, 'footer.contactInfo')}</h4>
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-gray-400" />
@@ -73,17 +77,17 @@ const Footer = () => {
 
           {/* Newsletter */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Stay Updated</h4>
+            <h4 className="text-lg font-semibold">{t(language, 'footer.stayUpdated')}</h4>
             <p className="text-gray-400 text-sm">
-              Subscribe to our newsletter for the latest updates and features.
+              {t(language, 'footer.newsletterDesc')}
             </p>
             <div className="space-y-2">
               <Input 
-                placeholder="Enter your email"
+                placeholder={t(language, 'footer.emailPlaceholder')}
                 className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
               />
               <Button className="w-full bg-gradient-to-r from-purple-600 to-purple-700">
-                Subscribe
+                {t(language, 'footer.subscribe')}
               </Button>
             </div>
           </div>
@@ -92,17 +96,17 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">
-              © 2024 KLARIO. All rights reserved.
+              {t(language, 'footer.allRights')}
             </p>
             <div className="flex space-x-6">
               <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white p-0 h-auto">
-                Privacy Policy
+                {t(language, 'footer.privacyPolicy')}
               </Button>
               <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white p-0 h-auto">
-                Terms of Service
+                {t(language, 'footer.termsOfService')}
               </Button>
               <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white p-0 h-auto">
-                Cookie Policy
+                {t(language, 'footer.cookiePolicy')}
               </Button>
             </div>
           </div>
