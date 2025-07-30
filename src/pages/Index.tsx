@@ -183,10 +183,10 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              Simple, Transparent Pricing
+              {t(language, 'pricing.title')}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Choose the perfect plan for your business. All plans include 1 month free trial with yearly agreement. Cancel anytime with 3 months advance notice.
+              {t(language, 'pricing.subtitle')}
             </p>
           </div>
           
@@ -194,40 +194,40 @@ const Index = () => {
             {/* Starter Plan */}
             <Card className="shadow-xl hover:shadow-2xl transition-shadow duration-300 relative">
               <div className="absolute top-4 right-4">
-                <Badge className="bg-green-100 text-green-800">1 Month Free</Badge>
+                <Badge className="bg-green-100 text-green-800">{t(language, 'pricing.monthFree')}</Badge>
               </div>
               <CardHeader className="text-center pb-4">
-                <CardTitle className="text-2xl font-bold">Starter</CardTitle>
+                <CardTitle className="text-2xl font-bold">{t(language, 'pricing.starter')}</CardTitle>
                 <div className="mt-4">
                   <span className="text-4xl font-bold text-purple-600">399</span>
-                  <span className="text-gray-600"> SEK/month</span>
+                  <span className="text-gray-600"> {t(language, 'pricing.sekMonth')}</span>
                 </div>
-                <p className="text-sm text-gray-500 mt-2">Yearly agreement required</p>
+                <p className="text-sm text-gray-500 mt-2">{t(language, 'pricing.yearlyRequired')}</p>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Up to 100 customers/month
+                    {t(language, 'pricing.upTo100')}
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    1 NFC card included
+                    {t(language, 'pricing.oneNfcCard')}
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Basic analytics
+                    {t(language, 'pricing.basicAnalytics')}
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Email support
+                    {t(language, 'pricing.emailSupport')}
                   </li>
                 </ul>
                 <Button className="w-full bg-purple-600 hover:bg-purple-700">
-                  Start Free Trial
+                  {t(language, 'pricing.startFreeTrial')}
                 </Button>
                 <p className="text-xs text-gray-500 text-center mt-2">
-                  Cancel anytime, 3 months in advance
+                  {t(language, 'pricing.cancelTerms')}
                 </p>
               </CardContent>
             </Card>
@@ -235,48 +235,48 @@ const Index = () => {
             {/* Professional Plan */}
             <Card className="shadow-xl hover:shadow-2xl transition-shadow duration-300 relative border-purple-200">
               <div className="absolute top-4 right-4">
-                <Badge className="bg-purple-100 text-purple-800">Most Popular</Badge>
+                <Badge className="bg-purple-100 text-purple-800">{t(language, 'pricing.mostPopular')}</Badge>
               </div>
               <CardHeader className="text-center pb-4">
-                <CardTitle className="text-2xl font-bold">Professional</CardTitle>
+                <CardTitle className="text-2xl font-bold">{t(language, 'pricing.professional')}</CardTitle>
                 <div className="mt-4">
                   <span className="text-4xl font-bold text-purple-600">799</span>
-                  <span className="text-gray-600"> SEK/month</span>
+                  <span className="text-gray-600"> {t(language, 'pricing.sekMonth')}</span>
                 </div>
-                <p className="text-sm text-gray-500 mt-2">Yearly agreement required</p>
+                <p className="text-sm text-gray-500 mt-2">{t(language, 'pricing.yearlyRequired')}</p>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Up to 500 customers/month
+                    {t(language, 'pricing.upTo500')}
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    5 NFC cards included
+                    {t(language, 'pricing.fiveNfcCards')}
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    AI message generation
+                    {t(language, 'pricing.aiMessageGen')}
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Multi-channel campaigns
+                    {t(language, 'pricing.multiChannelCampaigns')}
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Advanced analytics
+                    {t(language, 'pricing.advancedAnalytics')}
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Priority support
+                    {t(language, 'pricing.prioritySupport')}
                   </li>
                 </ul>
                 <Button className="w-full bg-purple-600 hover:bg-purple-700">
-                  Start Free Trial
+                  {t(language, 'pricing.startFreeTrial')}
                 </Button>
                 <p className="text-xs text-gray-500 text-center mt-2">
-                  Cancel anytime, 3 months in advance
+                  {t(language, 'pricing.cancelTerms')}
                 </p>
               </CardContent>
             </Card>
@@ -284,43 +284,43 @@ const Index = () => {
             {/* Enterprise Plan */}
             <Card className="shadow-xl hover:shadow-2xl transition-shadow duration-300 relative">
               <div className="absolute top-4 right-4">
-                <Badge className="bg-blue-100 text-blue-800">Custom</Badge>
+                <Badge className="bg-blue-100 text-blue-800">{t(language, 'pricing.custom')}</Badge>
               </div>
               <CardHeader className="text-center pb-4">
-                <CardTitle className="text-2xl font-bold">Enterprise</CardTitle>
+                <CardTitle className="text-2xl font-bold">{t(language, 'pricing.enterprise')}</CardTitle>
                 <div className="mt-4">
-                  <span className="text-4xl font-bold text-purple-600">Custom</span>
+                  <span className="text-4xl font-bold text-purple-600">{t(language, 'pricing.custom')}</span>
                 </div>
-                <p className="text-sm text-gray-500 mt-2">For large organizations</p>
+                <p className="text-sm text-gray-500 mt-2">{t(language, 'pricing.largeOrgs')}</p>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Unlimited customers
+                    {t(language, 'pricing.unlimitedCustomers')}
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Custom NFC cards
+                    {t(language, 'pricing.customNfcCards')}
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    White-label solution
+                    {t(language, 'pricing.whiteLabel')}
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Custom integrations
+                    {t(language, 'pricing.customIntegrations')}
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Dedicated support
+                    {t(language, 'pricing.dedicatedSupport')}
                   </li>
                 </ul>
                 <Button className="w-full bg-purple-600 hover:bg-purple-700">
-                  Contact Sales
+                  {t(language, 'pricing.contactSales')}
                 </Button>
                 <p className="text-xs text-gray-500 text-center mt-2">
-                  Custom terms available
+                  {t(language, 'pricing.customTerms')}
                 </p>
               </CardContent>
             </Card>
@@ -332,39 +332,39 @@ const Index = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-gray-800 mb-8">
-            Why Choose KLARIO NFC Marketing?
+            {t(language, 'whyChoose.title')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-xl font-semibold text-gray-700 mb-4 flex items-center justify-center">
-                <Nfc className="mr-2 text-purple-500" /> Instant NFC Connection
+                <Nfc className="mr-2 text-purple-500" /> {t(language, 'whyChoose.instantConnection')}
               </h3>
               <p className="text-gray-600">
-                Customers simply tap their phone to your NFC card to instantly connect and opt-in.
+                {t(language, 'whyChoose.instantConnectionDesc')}
               </p>
             </div>
             <div>
               <h3 className="text-xl font-semibold text-gray-700 mb-4 flex items-center justify-center">
-                <Zap className="mr-2 text-blue-500" /> AI-Powered Automation
+                <Zap className="mr-2 text-blue-500" /> {t(language, 'whyChoose.aiAutomation')}
               </h3>
               <p className="text-gray-600">
-                Our AI creates personalized campaigns and optimizes customer engagement automatically.
+                {t(language, 'whyChoose.aiAutomationDesc')}
               </p>
             </div>
             <div>
               <h3 className="text-xl font-semibold text-gray-700 mb-4 flex items-center justify-center">
-                <Smartphone className="mr-2 text-green-500" /> Mobile-First Design
+                <Smartphone className="mr-2 text-green-500" /> {t(language, 'whyChoose.mobileFirst')}
               </h3>
               <p className="text-gray-600">
-                Seamless experience optimized for mobile devices and modern customer behavior.
+                {t(language, 'whyChoose.mobileFirstDesc')}
               </p>
             </div>
             <div>
               <h3 className="text-xl font-semibold text-gray-700 mb-4 flex items-center justify-center">
-                <Globe className="mr-2 text-orange-500" /> Multi-Channel Integration
+                <Globe className="mr-2 text-orange-500" /> {t(language, 'whyChoose.multiChannelIntegration')}
               </h3>
               <p className="text-gray-600">
-                Connect NFC interactions with email, SMS, WhatsApp, and social media campaigns.
+                {t(language, 'whyChoose.multiChannelIntegrationDesc')}
               </p>
             </div>
           </div>
@@ -375,17 +375,17 @@ const Index = () => {
       <section id="booking" className="py-16 bg-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
-            Ready to Transform Your Marketing?
+            {t(language, 'booking.title')}
           </h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Book a free 15-minute consultation with our NFC marketing experts. We'll show you exactly how KLARIO can help grow your business through smart, touchless customer engagement.
+            {t(language, 'booking.subtitle')}
           </p>
           <div className="max-w-md mx-auto">
             <Button 
               className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-full text-lg mb-4"
               onClick={() => window.open('https://calendly.com/klario-demo', '_blank')}
             >
-              Book Your Free Demo
+              {t(language, 'booking.bookNow')}
             </Button>
             <p className="text-sm text-gray-500">
               No commitment required • 15 minutes • Free consultation
