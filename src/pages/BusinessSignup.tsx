@@ -11,6 +11,8 @@ import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Building2, Mail, Phone, MapPin, CreditCard, Shield, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLocalization } from "@/hooks/useLocalization";
+import { t } from "@/localization/translations";
 
 const businessSignupSchema = z.object({
   // Business Information
@@ -54,6 +56,7 @@ type BusinessSignupForm = z.infer<typeof businessSignupSchema>;
 const BusinessSignup = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const totalSteps = 4;
+  const { language } = useLocalization();
 
   const {
     register,

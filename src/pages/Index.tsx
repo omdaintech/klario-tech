@@ -400,16 +400,16 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h2 className="text-3xl font-bold text-gray-800 mb-4">
-                Contact Us
+                {t(language, 'contact.title')}
               </h2>
               <p className="text-gray-600 mb-4">
-                Ready to revolutionize your customer marketing with NFC technology?
+                {t(language, 'contact.subtitle')}
               </p>
               <form onSubmit={(e) => handleSubmit(e)}>
                 <div className="mb-4">
                   <Input
                     type="email"
-                    placeholder="Your Email"
+                    placeholder={t(language, 'contact.email')}
                     className="w-full px-4 py-2 border rounded-md focus:ring-purple-500 focus:border-purple-500"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -417,7 +417,7 @@ const Index = () => {
                 </div>
                 <div className="mb-4">
                   <Textarea
-                    placeholder="Tell us about your business and NFC marketing needs"
+                    placeholder={t(language, 'contact.message')}
                     className="w-full px-4 py-2 border rounded-md focus:ring-purple-500 focus:border-purple-500"
                     rows={4}
                     value={message}
@@ -425,33 +425,33 @@ const Index = () => {
                   />
                 </div>
                 <Button type="submit" className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-md focus-ring">
-                  Get Started with NFC
+                  {t(language, 'contact.sendMessage')}
                 </Button>
               </form>
               {isSubscribed && (
                 <Badge className="mt-4 bg-green-500 text-white border-0">
-                  Thank you! We'll be in touch about your NFC marketing solution.
+                  {t(language, 'contact.thankYou')}
                 </Badge>
               )}
             </div>
             <div>
               <h2 className="text-3xl font-bold text-gray-800 mb-4">
-                Visit Us
+                {t(language, 'contact.visitTitle')}
               </h2>
               <p className="text-gray-600 mb-4">
-                Our NFC technology experts are ready to help you transform your marketing.
+                {t(language, 'contact.visitSubtitle')}
               </p>
               <div className="flex items-center mb-2">
                 <MapPin className="mr-2 text-purple-500" />
-                <span className="text-gray-700">123 Innovation Street, Stockholm</span>
+                <span className="text-gray-700">{t(language, 'contact.address')}</span>
               </div>
               <div className="flex items-center mb-2">
                 <Phone className="mr-2 text-purple-500" />
-                <span className="text-gray-700">+46 8 123 456 78</span>
+                <span className="text-gray-700">{t(language, 'contact.phone')}</span>
               </div>
               <div className="flex items-center">
                 <Mail className="mr-2 text-purple-500" />
-                <span className="text-gray-700">hello@klario.se</span>
+                <span className="text-gray-700">{t(language, 'contact.emailAddress')}</span>
               </div>
             </div>
           </div>

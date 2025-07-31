@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 export type Language = 'en' | 'sv';
 
 export const useLocalization = () => {
   const [language, setLanguage] = useState<Language>('en');
+  const [, forceUpdate] = useState({});
 
   useEffect(() => {
     // Auto-detect language from browser or localStorage
@@ -17,10 +18,12 @@ export const useLocalization = () => {
     }
   }, []);
 
-  const switchLanguage = (newLanguage: Language) => {
+  const switchLanguage = useCallback((newLanguage: Language) => {
     setLanguage(newLanguage);
     localStorage.setItem('klario-language', newLanguage);
-  };
+    // Force a re-render to update the UI immediately
+    forceUpdate({});
+  }, []);
 
   return {
     language,

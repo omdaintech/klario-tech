@@ -11,6 +11,8 @@ import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Building2, Mail, Lock, Eye, EyeOff, Shield, Smartphone } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLocalization } from "@/hooks/useLocalization";
+import { t } from "@/localization/translations";
 
 const businessSigninSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
@@ -23,6 +25,7 @@ type BusinessSigninForm = z.infer<typeof businessSigninSchema>;
 const BusinessSignin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { language } = useLocalization();
 
   const {
     register,
@@ -56,7 +59,7 @@ const BusinessSignin = () => {
             className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors"
           >
             <ArrowLeft className="w-5 h-5" />
-            <span>Back to Home</span>
+            <span>{t(language, 'businessSignin.backToHome')}</span>
           </Link>
           
           <div className="flex items-center space-x-2">
@@ -78,10 +81,10 @@ const BusinessSignin = () => {
               </div>
             </div>
             <CardTitle className="text-2xl font-bold text-gray-900">
-              Welcome Back
+              {t(language, 'businessSignin.title')}
             </CardTitle>
             <CardDescription className="text-gray-600">
-              Sign in to your business account to manage your customer relationships
+              {t(language, 'businessSignin.subtitle')}
             </CardDescription>
             <div className="flex justify-center space-x-2 mt-4">
               <Badge variant="secondary" className="bg-green-100 text-green-800">
@@ -100,7 +103,7 @@ const BusinessSignin = () => {
               <div className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="email" className="text-sm font-medium text-gray-700">
-                    Business Email Address
+                    {t(language, 'businessSignin.email')}
                   </Label>
                   <div className="relative">
                     <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
@@ -119,7 +122,7 @@ const BusinessSignin = () => {
 
                 <div className="space-y-2">
                   <Label htmlFor="password" className="text-sm font-medium text-gray-700">
-                    Password
+                    {t(language, 'businessSignin.password')}
                   </Label>
                   <div className="relative">
                     <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
@@ -153,7 +156,7 @@ const BusinessSignin = () => {
                     className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                   />
                   <Label htmlFor="rememberMe" className="text-sm text-gray-700">
-                    Remember me
+                    {t(language, 'businessSignin.rememberMe')}
                   </Label>
                 </div>
                 
@@ -161,7 +164,7 @@ const BusinessSignin = () => {
                   to="/business/forgot-password" 
                   className="text-sm text-blue-600 hover:text-blue-700 hover:underline"
                 >
-                  Forgot password?
+                  {t(language, 'businessSignin.forgotPassword')}
                 </Link>
               </div>
 
@@ -173,10 +176,10 @@ const BusinessSignin = () => {
                 {isSubmitting ? (
                   <div className="flex items-center space-x-2">
                     <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    <span>Signing In...</span>
+                    <span>{t(language, 'businessSignin.signingIn')}</span>
                   </div>
                 ) : (
-                  "Sign In to Dashboard"
+                  t(language, 'businessSignin.signIn')
                 )}
               </Button>
             </form>
@@ -185,25 +188,25 @@ const BusinessSignin = () => {
               <Separator />
               <div className="text-center mt-6">
                 <p className="text-gray-600 text-sm">
-                  Don't have a business account?
+                  {t(language, 'businessSignin.noAccount')}
                 </p>
                 <Link 
                   to="/business/signup" 
                   className="inline-flex items-center space-x-2 mt-2 text-blue-600 hover:text-blue-700 font-medium hover:underline transition-colors"
                 >
                   <Building2 className="w-4 h-4" />
-                  <span>Create Business Account</span>
+                  <span>{t(language, 'businessSignin.createAccount')}</span>
                 </Link>
               </div>
             </div>
 
             {/* Help Section */}
             <div className="mt-8 p-4 bg-gray-50 rounded-lg">
-              <h4 className="font-medium text-gray-900 mb-2">Need Help?</h4>
+              <h4 className="font-medium text-gray-900 mb-2">{t(language, 'businessSignin.needHelp')}</h4>
               <div className="space-y-1 text-sm text-gray-600">
-                <p>• Contact support: support@tapcrm.com</p>
-                <p>• Call us: 1-800-TAP-CRM-1</p>
-                <p>• Check our <Link to="/help" className="text-blue-600 hover:underline">Help Center</Link></p>
+                <p>• {t(language, 'businessSignin.contactSupport')}</p>
+                <p>• {t(language, 'businessSignin.callUs')}</p>
+                <p>• <Link to="/help" className="text-blue-600 hover:underline">{t(language, 'businessSignin.helpCenter')}</Link></p>
               </div>
             </div>
           </CardContent>
@@ -213,7 +216,7 @@ const BusinessSignin = () => {
         <div className="max-w-md mx-auto mt-6 text-center">
           <div className="flex items-center justify-center space-x-2 text-gray-600 text-sm">
             <Shield className="w-4 h-4" />
-            <span>Your data is protected with enterprise-grade security</span>
+            <span>{t(language, 'businessSignin.securityNotice')}</span>
           </div>
         </div>
       </div>

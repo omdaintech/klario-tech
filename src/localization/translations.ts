@@ -116,14 +116,19 @@ export const translations = {
     
     // Contact Section
     contact: {
-      title: "Get in Touch",
-      subtitle: "Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+      title: "Contact Us",
+      subtitle: "Ready to revolutionize your customer marketing with NFC technology?",
+      visitTitle: "Visit Us",
+      visitSubtitle: "Our NFC technology experts are ready to help you transform your marketing.",
       name: "Name",
-      email: "Email",
-      message: "Message",
-      sendMessage: "Send Message",
-      thankYou: "Thank you for your message!",
-      thankYouDesc: "We'll get back to you as soon as possible."
+      email: "Your Email",
+      message: "Tell us about your business and NFC marketing needs",
+      sendMessage: "Get Started with NFC",
+      thankYou: "Thank you! We'll be in touch about your NFC marketing solution.",
+      thankYouDesc: "We'll get back to you as soon as possible.",
+      address: "123 Innovation Street, Stockholm",
+      phone: "+46 8 123 456 78",
+      emailAddress: "hello@klario.se"
     },
     
     // Footer
@@ -140,6 +145,71 @@ export const translations = {
       privacyPolicy: "Privacy Policy",
       termsOfService: "Terms of Service", 
       cookiePolicy: "Cookie Policy"
+    },
+
+    // Business Pages
+    businessSignup: {
+      title: "Create Business Account",
+      subtitle: "Join thousands of businesses using NFC marketing",
+      step1Title: "Business Information",
+      step1Subtitle: "Tell us about your business",
+      step2Title: "Business Contact & Address", 
+      step2Subtitle: "How can customers reach you?",
+      step3Title: "Business Owner Information",
+      step3Subtitle: "Primary contact and account owner details",
+      step4Title: "Account Security",
+      step4Subtitle: "Set up your login credentials",
+      businessName: "Business Name",
+      businessType: "Business Type",
+      industry: "Industry",
+      taxId: "Tax ID / EIN",
+      website: "Website (Optional)",
+      businessEmail: "Business Email",
+      businessPhone: "Business Phone",
+      streetAddress: "Street Address",
+      city: "City",
+      state: "State",
+      zipCode: "ZIP Code",
+      country: "Country",
+      ownerFirstName: "First Name",
+      ownerLastName: "Last Name",
+      ownerEmail: "Owner Email",
+      ownerPhone: "Owner Phone",
+      password: "Password",
+      confirmPassword: "Confirm Password",
+      termsAccepted: "I agree to the Terms and Conditions",
+      privacyAccepted: "I agree to the Privacy Policy",
+      nextStep: "Next Step",
+      previousStep: "Previous",
+      createAccount: "Create Account",
+      backToHome: "Back to Home",
+      alreadyHaveAccount: "Already have an account?",
+      signInHere: "Sign in here"
+    },
+
+    businessSignin: {
+      title: "Welcome Back",
+      subtitle: "Sign in to your business account to manage your customer relationships",
+      email: "Business Email Address",
+      password: "Password", 
+      rememberMe: "Remember me",
+      forgotPassword: "Forgot password?",
+      signIn: "Sign In to Dashboard",
+      signingIn: "Signing In...",
+      noAccount: "Don't have a business account?",
+      createAccount: "Create Business Account",
+      needHelp: "Need Help?",
+      contactSupport: "Contact support: support@klario.se",
+      callUs: "Call us: +46 8 123 456 78",
+      helpCenter: "Help Center",
+      securityNotice: "Your data is protected with enterprise-grade security",
+      backToHome: "Back to Home"
+    },
+
+    notFound: {
+      title: "404",
+      subtitle: "Oops! Page not found",
+      returnHome: "Return to Home"
     }
   },
   
@@ -258,14 +328,19 @@ export const translations = {
     
     // Contact Section
     contact: {
-      title: "Hör av dig",
-      subtitle: "Har du frågor? Vi skulle gärna höra från dig. Skicka oss ett meddelande så svarar vi så snart som möjligt.",
+      title: "Kontakta oss",
+      subtitle: "Redo att revolutionera din kundmarknadsföring med NFC-teknik?",
+      visitTitle: "Besök oss",
+      visitSubtitle: "Våra NFC-teknikexperter är redo att hjälpa dig transformera din marknadsföring.",
       name: "Namn",
-      email: "E-post",
-      message: "Meddelande",
-      sendMessage: "Skicka meddelande",
-      thankYou: "Tack för ditt meddelande!",
-      thankYouDesc: "Vi kommer att återkomma till dig så snart som möjligt."
+      email: "Din e-post",
+      message: "Berätta om ditt företag och NFC-marknadsföringsbehov",
+      sendMessage: "Kom igång med NFC",
+      thankYou: "Tack! Vi kommer att höra av oss angående din NFC-marknadsföringslösning.",
+      thankYouDesc: "Vi kommer att återkomma till dig så snart som möjligt.",
+      address: "123 Innovation Street, Stockholm",
+      phone: "+46 8 123 456 78",
+      emailAddress: "hello@klario.se"
     },
     
     // Footer
@@ -282,6 +357,71 @@ export const translations = {
       privacyPolicy: "Integritetspolicy",
       termsOfService: "Användarvillkor",
       cookiePolicy: "Cookie-policy"
+    },
+
+    // Business Pages
+    businessSignup: {
+      title: "Skapa företagskonto",
+      subtitle: "Gå med i tusentals företag som använder NFC-marknadsföring",
+      step1Title: "Företagsinformation",
+      step1Subtitle: "Berätta om ditt företag",
+      step2Title: "Företagskontakt och adress",
+      step2Subtitle: "Hur kan kunder nå dig?",
+      step3Title: "Företagsägarinformation",
+      step3Subtitle: "Primärkontakt och kontoägaruppgifter",
+      step4Title: "Kontosäkerhet",
+      step4Subtitle: "Ställ in dina inloggningsuppgifter",
+      businessName: "Företagsnamn",
+      businessType: "Företagstyp",
+      industry: "Bransch",
+      taxId: "Skattenummer / Orgnr",
+      website: "Webbplats (Valfritt)",
+      businessEmail: "Företags-e-post",
+      businessPhone: "Företagstelefon",
+      streetAddress: "Gatuadress",
+      city: "Stad",
+      state: "Region",
+      zipCode: "Postnummer",
+      country: "Land",
+      ownerFirstName: "Förnamn",
+      ownerLastName: "Efternamn",
+      ownerEmail: "Ägar-e-post",
+      ownerPhone: "Ägartelefon",
+      password: "Lösenord",
+      confirmPassword: "Bekräfta lösenord",
+      termsAccepted: "Jag godkänner användarvillkoren",
+      privacyAccepted: "Jag godkänner integritetspolicyn",
+      nextStep: "Nästa steg",
+      previousStep: "Föregående",
+      createAccount: "Skapa konto",
+      backToHome: "Tillbaka hem",
+      alreadyHaveAccount: "Har du redan ett konto?",
+      signInHere: "Logga in här"
+    },
+
+    businessSignin: {
+      title: "Välkommen tillbaka",
+      subtitle: "Logga in på ditt företagskonto för att hantera dina kundrelationer",
+      email: "Företags-e-postadress",
+      password: "Lösenord",
+      rememberMe: "Kom ihåg mig",
+      forgotPassword: "Glömt lösenord?",
+      signIn: "Logga in på dashboard",
+      signingIn: "Loggar in...",
+      noAccount: "Har du inget företagskonto?",
+      createAccount: "Skapa företagskonto",
+      needHelp: "Behöver du hjälp?",
+      contactSupport: "Kontakta support: support@klario.se",
+      callUs: "Ring oss: +46 8 123 456 78",
+      helpCenter: "Hjälpcenter",
+      securityNotice: "Din data skyddas med säkerhet på företagsnivå",
+      backToHome: "Tillbaka hem"
+    },
+
+    notFound: {
+      title: "404",
+      subtitle: "Oj! Sidan hittades inte",
+      returnHome: "Tillbaka hem"
     }
   }
 };
